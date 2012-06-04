@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nerdery.CSharpCodeStyle", "Nerdery.CSharpCodeStyle\Nerdery.CSharpCodeStyle.csproj", "{063C525D-F4A9-4FF3-8E36-FB53204A2025}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet-Package", "NuGet-Package", "{8EC5EDD0-DDD2-4113-B006-7B23EE04AA7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{15829FC1-565A-4BB9-A132-3C3B1959E405}"
+	ProjectSection(SolutionItems) = preProject
+		content\StyleCop.MSBuild.ContentHook.txt = content\StyleCop.MSBuild.ContentHook.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{7923FC3A-4DA1-4A99-8740-FAF3F4CDA7E2}"
+	ProjectSection(SolutionItems) = preProject
+		tools\Install.ps1 = tools\Install.ps1
+		tools\Settings-Default.StyleCop = tools\Settings-Default.StyleCop
+		tools\Settings.StyleCop = tools\Settings.StyleCop
+		tools\StyleCop.CSharp.dll = tools\StyleCop.CSharp.dll
+		tools\StyleCop.CSharp.Rules.dll = tools\StyleCop.CSharp.Rules.dll
+		tools\StyleCop.dll = tools\StyleCop.dll
+		tools\StyleCop.Targets = tools\StyleCop.Targets
+		tools\StyleCop.VSPackage.dll = tools\StyleCop.VSPackage.dll
+		tools\StyleCopPlus.dll = tools\StyleCopPlus.dll
+		tools\StyleCopSettingsEditor.exe = tools\StyleCopSettingsEditor.exe
+		tools\Uninstall.ps1 = tools\Uninstall.ps1
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{063C525D-F4A9-4FF3-8E36-FB53204A2025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{063C525D-F4A9-4FF3-8E36-FB53204A2025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{063C525D-F4A9-4FF3-8E36-FB53204A2025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{063C525D-F4A9-4FF3-8E36-FB53204A2025}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15829FC1-565A-4BB9-A132-3C3B1959E405} = {8EC5EDD0-DDD2-4113-B006-7B23EE04AA7E}
+		{7923FC3A-4DA1-4A99-8740-FAF3F4CDA7E2} = {8EC5EDD0-DDD2-4113-B006-7B23EE04AA7E}
+	EndGlobalSection
+EndGlobal

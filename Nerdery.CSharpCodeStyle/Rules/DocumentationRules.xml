@@ -5,7 +5,7 @@
   </Description>
 
   <Rules>
-    <RuleGroup Name="Extensions">
+    <RuleGroup Name="Documentation Rules">
       <Rule Name="PublicConstructorsShouldBeDocumented" CheckId="ND1001">
         <Context>Public constructors should have documentation.</Context>
         <Description>Nerdery standards require comments on public methods.</Description>

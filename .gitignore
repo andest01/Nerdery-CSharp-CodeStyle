@@ -1,0 +1,6 @@
+
+*.suo
+*.Cache
+bin
+obj
+_ReSharper.Nerdery.CSharpCodeStyle
