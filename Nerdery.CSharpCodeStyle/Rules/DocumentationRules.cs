@@ -25,14 +25,18 @@ namespace Nerdery.CSharpCodeStyle.Rules
 
             if (csdocument.RootElement != null && !csdocument.RootElement.Generated)
             {
-                csdocument.WalkDocument(this.PublicConstructorShouldBeDocumented, null, null);
+                csdocument.WalkDocument(this.PublicConstructorsShouldBeDocumented, null, null);
                 csdocument.WalkDocument(this.PublicMethodsShouldBeDocumented, null, null);
+                csdocument.WalkDocument(this.PublicPropertiesShouldBeDocumented, null, null);
+                csdocument.WalkDocument(this.InternalConstructorsShouldBeDocumented, null, null);
+                csdocument.WalkDocument(this.InternalMethodsShouldBeDocumented, null, null);
+                csdocument.WalkDocument(this.InternalPropertiesShouldBeDocumented, null, null);
                 csdocument.WalkDocument(this.RegionMustBeSeparatedByBlankLine, null, null);
                 csdocument.WalkDocument(this.RegionNameMustHaveFirstLetterCapitalized, null, null);
             }
         }
 
-        private bool PublicConstructorShouldBeDocumented(CsElement element, CsElement parentElement, object context)
+        private bool PublicConstructorsShouldBeDocumented(CsElement element, CsElement parentElement, object context)
         {
             if (!element.Generated && element.ElementType == ElementType.Constructor
                 && element.ActualAccess == AccessModifierType.Public)
@@ -54,6 +58,62 @@ namespace Nerdery.CSharpCodeStyle.Rules
                 if ((element.Header == null) || (element.Header.Text.Length == 0))
                 {
                     this.AddViolation(element, "PublicMethodsShouldBeDocumented");
+                }
+            }
+
+            return true;
+        }
+
+        private bool PublicPropertiesShouldBeDocumented(CsElement element, CsElement parentElement, object context)
+        {
+            if (!element.Generated && element.ElementType == ElementType.Property
+                && element.ActualAccess == AccessModifierType.Public)
+            {
+                if ((element.Header == null) || (element.Header.Text.Length == 0))
+                {
+                    this.AddViolation(element, "PublicPropertiesShouldBeDocumented");
+                }
+            }
+
+            return true;
+        }
+
+        private bool InternalConstructorsShouldBeDocumented(CsElement element, CsElement parentElement, object context)
+        {
+            if (!element.Generated && element.ElementType == ElementType.Constructor
+                && element.ActualAccess == AccessModifierType.Internal)
+            {
+                if ((element.Header == null) || (element.Header.Text.Length == 0))
+                {
+                    this.AddViolation(element, "InternalConstructorsShouldBeDocumented");
+                }
+            }
+
+            return true;
+        }
+
+        private bool InternalMethodsShouldBeDocumented(CsElement element, CsElement parentElement, object context)
+        {
+            if (!element.Generated && element.ElementType == ElementType.Method
+                && element.ActualAccess == AccessModifierType.Internal)
+            {
+                if ((element.Header == null) || (element.Header.Text.Length == 0))
+                {
+                    this.AddViolation(element, "InternalMethodsShouldBeDocumented");
+                }
+            }
+
+            return true;
+        }
+
+        private bool InternalPropertiesShouldBeDocumented(CsElement element, CsElement parentElement, object context)
+        {
+            if (!element.Generated && element.ElementType == ElementType.Property
+                && element.ActualAccess == AccessModifierType.Internal)
+            {
+                if ((element.Header == null) || (element.Header.Text.Length == 0))
+                {
+                    this.AddViolation(element, "InternalPropertiesShouldBeDocumented");
                 }
             }
 

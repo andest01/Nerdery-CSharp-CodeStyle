@@ -6,20 +6,36 @@
 
   <Rules>
     <RuleGroup Name="Documentation Rules">
-      <Rule Name="PublicConstructorsShouldBeDocumented" CheckId="ND1001">
-        <Context>Public constructors should have documentation.</Context>
-        <Description>Nerdery standards require comments on public methods.</Description>
+      <Rule Name="InternalConstructorsShouldBeDocumented" CheckId="ND1001">
+        <Context>Internal constructors should have documentation.</Context>
+        <Description>Nerdery standards require comments on internal constructors.</Description>
       </Rule>
-      <Rule Name="PublicMethodsShouldBeDocumented" CheckId="ND1002">
+      <Rule Name="InternalMethodsShouldBeDocumented" CheckId="ND1002">
+        <Context>Internal methods should have documentation.</Context>
+        <Description>Nerdery standards require comments on internal methods.</Description>
+      </Rule>
+      <Rule Name="InternalPropertiesShouldBeDocumented" CheckId="ND1003">
+        <Context>Internal properties should have documentation.</Context>
+        <Description>Nerdery standards require comments on internal properties.</Description>
+      </Rule>
+      <Rule Name="PublicConstructorsShouldBeDocumented" CheckId="ND1004">
+        <Context>Public constructors should have documentation.</Context>
+        <Description>Nerdery standards require comments on public constructors.</Description>
+      </Rule>
+      <Rule Name="PublicMethodsShouldBeDocumented" CheckId="ND1005">
         <Context>Public methods should have documentation.</Context>
         <Description>Nerdery standards require comments on public methods.</Description>
       </Rule>
-      <Rule Name="RegionMustBeSeparatedByBlankLine" CheckId="ND1003">
+      <Rule Name="PublicPropertiesShouldBeDocumented" CheckId="ND1006">
+        <Context>Public properties should have documentation.</Context>
+        <Description>Nerdery standards require comments on public properties.</Description>
+      </Rule>
+      <Rule Name="RegionMustBeSeparatedByBlankLine" CheckId="ND1007">
         <Context>Regions have to be spaced properly</Context>
         <Description>Nerdery standards require a space before/after the beginning or end of a region definition. An
         exception to this rule is if the begin region is beneath the start of a { or the end region is prior to a }</Description>
       </Rule>
-      <Rule Name="RegionNameMustHaveFirstLetterCapitalized" CheckId="ND1004">
+      <Rule Name="RegionNameMustHaveFirstLetterCapitalized" CheckId="ND1008">
         <Context>Regions must have the first character capitalized</Context>
         <Description>
           Nerdery standards require a region to have a name and that name has to have its first character capitalized.
