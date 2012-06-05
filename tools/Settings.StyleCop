@@ -250,5 +250,20 @@
         <StringProperty Name="SP2100_Limit">200:4</StringProperty>
       </AnalyzerSettings>
     </Analyzer>
+    <Analyzer AnalyzerId="Nerdery.CSharpCodeStyle.Rules.DocumentationRules">
+      <Rules>
+        <Rule Name="InternalPropertiesShouldBeDocumented">
+          <RuleSettings>
+            <BooleanProperty Name="Enabled">False</BooleanProperty>
+          </RuleSettings>
+        </Rule>
+        <Rule Name="PublicPropertiesShouldBeDocumented">
+          <RuleSettings>
+            <BooleanProperty Name="Enabled">False</BooleanProperty>
+          </RuleSettings>
+        </Rule>
+      </Rules>
+      <AnalyzerSettings />
+    </Analyzer>
   </Analyzers>
 </StyleCopSettings>
