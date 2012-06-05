@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0</version>
-    <authors>Ken Sykora,Andy Reeves,Adam Ralph</authors>
-    <owners>Ken Sykora</owners>
+    <version>1.0.1</version>
+    <authors>ken.sykora</authors>
+    <owners>thenerdery</owners>
     <projectUrl>https://github.com/thenerdery/Nerdery-CSharp-CodeStyle</projectUrl>
     <iconUrl>http://nerdery.com/assets/layout/apple-touch-icon.png</iconUrl>
     <id>Nerdery.CSharpCodeStyle</id>
@@ -13,8 +13,8 @@
     <summary>Adds official StyleCop MSBuild targets to your project. Runs StyleCop analysis on your project with every build. Works both on a developer workstation (with or without Visual Studio) and on a build s</summary>
     <releaseNotes>When upgrading, open visual studio without performing a build, otherwise StyleCop DLLs will not be writeable and NuGet will throw an error.
 
-See</releaseNotes>
-    <copyright>Copyright (c) 2012 The Nerdery, Adam Ralph (adam@adamralph.com)</copyright>
+See https://github.com/thenerdery/Nerdery-CSharp-CodeStyle/wiki/Change-Log for change log</releaseNotes>
+    <copyright>Copyright (c) 2012 The Nerdery</copyright>
     <language>en-US</language>
   </metadata>
   <files>
