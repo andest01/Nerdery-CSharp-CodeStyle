@@ -1,16 +1,19 @@
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0-alpha1</version>
+    <version>1.0.0</version>
     <authors>Ken Sykora,Andy Reeves,Adam Ralph</authors>
     <owners>Ken Sykora</owners>
-    <projectUrl>https://github.com/kensykora/Nerdery-CSharp-CodeStyle</projectUrl>
+    <projectUrl>https://github.com/thenerdery/Nerdery-CSharp-CodeStyle</projectUrl>
     <iconUrl>http://nerdery.com/assets/layout/apple-touch-icon.png</iconUrl>
     <id>Nerdery.CSharpCodeStyle</id>
+    <title>Nerdery C# Code Style</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Nerdery C# Code Style Conventions with StyleCop (StyleCop+) Integration with MS Build</description>
     <summary>Adds official StyleCop MSBuild targets to your project. Runs StyleCop analysis on your project with every build. Works both on a developer workstation (with or without Visual Studio) and on a build s</summary>
-    <releaseNotes>See the project site.</releaseNotes>
+    <releaseNotes>When upgrading, open visual studio without performing a build, otherwise StyleCop DLLs will not be writeable and NuGet will throw an error.
+
+See</releaseNotes>
     <copyright>Copyright (c) 2012 The Nerdery, Adam Ralph (adam@adamralph.com)</copyright>
     <language>en-US</language>
   </metadata>
@@ -23,6 +26,7 @@
     <file src="tools\pt-BR\StyleCop.CSharp.Rules.resources.dll" target="tools\pt-BR\StyleCop.CSharp.Rules.resources.dll" />
     <file src="tools\ru-RU\StyleCop.CSharp.Rules.resources.dll" target="tools\ru-RU\StyleCop.CSharp.Rules.resources.dll" />
     <file src="tools\Install.ps1" target="tools\Install.ps1" />
+    <file src="license.txt" target="tools\license.txt" />
     <file src="tools\Nerdery.CSharpCodeStyle.dll" target="tools\Nerdery.CSharpCodeStyle.dll" />
     <file src="tools\Settings-Default.StyleCop" target="tools\Settings-Default.StyleCop" />
     <file src="tools\Settings.StyleCop" target="tools\Settings.StyleCop" />
@@ -34,7 +38,6 @@
     <file src="tools\StyleCopPlus.dll" target="tools\StyleCopPlus.dll" />
     <file src="tools\StyleCopSettingsEditor.exe" target="tools\StyleCopSettingsEditor.exe" />
     <file src="tools\Uninstall.ps1" target="tools\Uninstall.ps1" />
-    <file src="license.txt" target="license.txt" />
     <file src="README.md" target="README.md" />
   </files>
 </package>
