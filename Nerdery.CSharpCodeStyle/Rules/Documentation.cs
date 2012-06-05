@@ -12,7 +12,7 @@ namespace Nerdery.CSharpCodeStyle.Rules
     /// This stylecop rule will require Public methods to be documented.
     /// </summary>
     [SourceAnalyzer(typeof(CsParser))]
-    public class DocumentationRules : SourceAnalyzer
+    public class Documentation : SourceAnalyzer
     {
         /// <summary>
         /// This method will analyze the document and call the routine that
@@ -39,7 +39,7 @@ namespace Nerdery.CSharpCodeStyle.Rules
         private bool PublicConstructorsShouldBeDocumented(CsElement element, CsElement parentElement, object context)
         {
             if (!element.Generated && element.ElementType == ElementType.Constructor
-                && element.ActualAccess == AccessModifierType.Public)
+                && element.AccessModifier == AccessModifierType.Public)
             {
                 if ((element.Header == null) || (element.Header.Text.Length == 0))
                 {
@@ -53,7 +53,7 @@ namespace Nerdery.CSharpCodeStyle.Rules
         private bool PublicMethodsShouldBeDocumented(CsElement element, CsElement parentElement, object context)
         {
             if (!element.Generated && element.ElementType == ElementType.Method
-                && element.ActualAccess == AccessModifierType.Public)
+                && element.AccessModifier == AccessModifierType.Public)
             {
                 if ((element.Header == null) || (element.Header.Text.Length == 0))
                 {
@@ -67,7 +67,7 @@ namespace Nerdery.CSharpCodeStyle.Rules
         private bool PublicPropertiesShouldBeDocumented(CsElement element, CsElement parentElement, object context)
         {
             if (!element.Generated && element.ElementType == ElementType.Property
-                && element.ActualAccess == AccessModifierType.Public)
+                && element.AccessModifier == AccessModifierType.Public)
             {
                 if ((element.Header == null) || (element.Header.Text.Length == 0))
                 {
@@ -81,7 +81,7 @@ namespace Nerdery.CSharpCodeStyle.Rules
         private bool InternalConstructorsShouldBeDocumented(CsElement element, CsElement parentElement, object context)
         {
             if (!element.Generated && element.ElementType == ElementType.Constructor
-                && element.ActualAccess == AccessModifierType.Internal)
+                && element.AccessModifier == AccessModifierType.Internal)
             {
                 if ((element.Header == null) || (element.Header.Text.Length == 0))
                 {
@@ -95,7 +95,7 @@ namespace Nerdery.CSharpCodeStyle.Rules
         private bool InternalMethodsShouldBeDocumented(CsElement element, CsElement parentElement, object context)
         {
             if (!element.Generated && element.ElementType == ElementType.Method
-                && element.ActualAccess == AccessModifierType.Internal)
+                && element.AccessModifier == AccessModifierType.Internal)
             {
                 if ((element.Header == null) || (element.Header.Text.Length == 0))
                 {
@@ -109,7 +109,7 @@ namespace Nerdery.CSharpCodeStyle.Rules
         private bool InternalPropertiesShouldBeDocumented(CsElement element, CsElement parentElement, object context)
         {
             if (!element.Generated && element.ElementType == ElementType.Property
-                && element.ActualAccess == AccessModifierType.Internal)
+                && element.AccessModifier == AccessModifierType.Internal)
             {
                 if ((element.Header == null) || (element.Header.Text.Length == 0))
                 {

@@ -43,12 +43,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Rules\DocumentationRules.cs" />
+    <Compile Include="Rules\Documentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\DocumentationTests.cs" />
+    <Compile Include="Tests\Documentation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rules\DocumentationRules.xml">
+    <EmbeddedResource Include="Rules\Documentation.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
