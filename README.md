@@ -19,6 +19,10 @@ More information on how to customize, contribute, and find out about our style d
 
 <https://github.com/thenerdery/Nerdery-CSharp-CodeStyle/wiki>
 
+##Change Log
+
+Changes can always be found on our GitHub wiki at https://github.com/thenerdery/Nerdery-CSharp-CodeStyle/wiki/Change-Log
+
 ##Credits
 
 This library is maintained by The Nerdery .NET Committee and .NET Principle Software Engineers, and we welcome your feedback. This undertaking would not be possible without the awesome work of the community developers for StyleCop.
