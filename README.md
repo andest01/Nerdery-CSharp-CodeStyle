@@ -1,4 +1,4 @@
-# Nerdery C# Code Style Rules
+# Nerdery C# Code Style Guidelines
 
 The goal of this project is to improve style within a project by setting flags that enforce consistency, but not necessarily a specific set of rules.
 
