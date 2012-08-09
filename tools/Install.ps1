@@ -67,3 +67,17 @@ if(-not (Test-Path $customSettingsFileLocation))
 {
 	copy-item (join-path $toolsPath "Settings-ProjectOverrides.StyleCop") $customSettingsFileLocation
 }
+
+#create shortcut if it doesn't exist yet
+$shortcutFileLocation = (join-path $project.FullName.Substring(0, $project.FullName.Substring(0, $project.FullName.LastIndexOf("\")).LastIndexOf("\")) "Edit-Style-Settings.lnk")
+write-host $shortcutFileLocation
+if(-not (Test-Path $shortcutFileLocation))
+{
+write-host "creating shortcut"
+	$WshShell = New-Object -comObject WScript.Shell
+	$Shortcut = $WshShell.CreateShortcut($shortcutFileLocation)
+	$Shortcut.TargetPath = (join-path $toolsPath "StyleCopSettingsEditor.exe")
+	$Shortcut.Arguments = "Settings.StyleCop"
+	$Shortcut.Save()
+write-host "done"
+}
