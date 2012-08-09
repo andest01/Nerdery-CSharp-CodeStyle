@@ -65,5 +65,5 @@ $projectXml.Save($project.FullName)
 $customSettingsFileLocation = (join-path $project.FullName.Substring(0, $project.FullName.Substring(0, $project.FullName.LastIndexOf("\")).LastIndexOf("\")) "Settings.StyleCop")
 if(-not (Test-Path $customSettingsFileLocation)) 
 {
-	copy-item (join-path $toolsPath "Settings-Default.StyleCop") $customSettingsFileLocation
+	copy-item (join-path $toolsPath "Settings-ProjectOverrides.StyleCop") $customSettingsFileLocation
 }
