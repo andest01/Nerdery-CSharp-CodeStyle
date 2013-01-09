@@ -1,6 +1,8 @@
 #  Copyright (c) Adam Ralph. All rights reserved.
 
 param($installPath, $toolsPath, $package, $project)
+$sw = new-object system.IO.StreamWriter("c:\temp.txt")
+$sw.writeline("Some sample text")
 
 # remove content hook from project and delete file
 $hookName = "StyleCop.MSBuild.ContentHook.txt"
@@ -61,23 +63,35 @@ $projectXml.Project.AppendChild($import)
 # save changes
 $projectXml.Save($project.FullName)
 
+$solutionRoot =$project.FullName.Substring(0, $project.FullName.Substring(0, $project.FullName.LastIndexOf("\")).LastIndexOf("\"))
+
 #copy custom settings file if it doesn't exist yet
-$customSettingsFileLocation = (join-path $project.FullName.Substring(0, $project.FullName.Substring(0, $project.FullName.LastIndexOf("\")).LastIndexOf("\")) "Settings.StyleCop")
+
+$customSettingsFileLocation = join-path $solutionRoot "Settings.StyleCop"
 if(-not (Test-Path $customSettingsFileLocation)) 
 {
 	copy-item (join-path $toolsPath "Settings-ProjectOverrides.StyleCop") $customSettingsFileLocation
 }
 
+#copy resharper settings file to solution root
+$resharperSettingsPath = Join-Path $toolsPath "ResharperSettings.DotSettings"
+$solutionSln = ((gci $solutionRoot *.sln) | Select-Object -first 1)
+if($solutionSln)
+{
+	copy-item $resharperSettingsPath (join-path $solutionRoot ([System.IO.Path]::GetFileNameWithoutExtension($solutionSln.Name)+".DotSettings"))
+}
+
+
 #create shortcut if it doesn't exist yet
 $shortcutFileLocation = (join-path $project.FullName.Substring(0, $project.FullName.Substring(0, $project.FullName.LastIndexOf("\")).LastIndexOf("\")) "Edit-Style-Settings.lnk")
-write-host $shortcutFileLocation
+$sw.writeline($shortcutFileLocation)
 if(-not (Test-Path $shortcutFileLocation))
 {
-write-host "creating shortcut"
+$sw.writeline("creating shortcut")
 	$WshShell = New-Object -comObject WScript.Shell
 	$Shortcut = $WshShell.CreateShortcut($shortcutFileLocation)
 	$Shortcut.TargetPath = (join-path $toolsPath "StyleCopSettingsEditor.exe")
 	$Shortcut.Arguments = "Settings.StyleCop"
 	$Shortcut.Save()
-write-host "done"
+$sw.writeline("done")
 }
